@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<body>
+    <img src="" id="image" style="height: 300px; width: auto;">
+    <h3 id="desc"></h3>
+
+    <button id="gen" onclick="thefunc()">Randomize</button>
+    <table border="1px" style="border-style: dotted;">
+        <tr>
+            <td>ViratKohli</td>
+            <td id="1">0</td>
+        </tr>
+        <tr>
+            <td>MSDhoni</td>
+            <td id="2">0</td>
+        </tr>
+        <tr>
+            <td>AB de villiers</td>
+            <td id="3">0</td>
+        </tr>
+        <tr>
+            <td>dale steyn</td>
+            <td id="4">0</td>
+        </tr>
+        <tr>
+            <td>jasprit bumrah</td>
+            <td id="5">0</td>
+        </tr>
+        
+        
+        
+        
+    </table>
+
+    <script>
+        var n = {"1": 0,"2": 0,"3": 0,"4": 0,"5": 0,}
+
+        var texts = ["ViratKohli","MSDhoni","AB de villiers","dale steyn","jasprit bumrah"]
+
+        var images = [
+            "https://www.google.com/imgres?imgurl=https%3A%2F%2Fm.cricbuzz.com%2Fa%2Fimg%2Fv1%2F192x192%2Fi1%2Fc170661%2Fvirat-kohli.jpg&imgrefurl=https%3A%2F%2Fwww.cricbuzz.com%2Fprofiles%2F1413%2Fvirat-kohli&tbnid=QMPXAFw7M7f5TM&vet=12ahUKEwij8bPImbHrAhWfh0sFHfJlAOQQMygBegUIARDSAQ..i&docid=ByRkekLQ2hP6nM&w=192&h=192&q=virat%20kohli&safe=active&ved=2ahUKEwij8bPImbHrAhWfh0sFHfJlAOQQMygBegUIARDSAQ",
+            "https://www.google.com/imgres?imgurl=https%3A%2F%2Fc.ndtvimg.com%2F2020-02%2Fqvdisppg_ms-dhoni-afp_625x300_26_February_20.jpg&imgrefurl=https%3A%2F%2Fsports.ndtv.com%2Fcricket%2Fms-dhoni-never-ever-looked-out-of-control-michael-holding-2283885&tbnid=XprUpnlidQiHVM&vet=12ahUKEwi1qLWImrHrAhWaSCsKHQCWAHkQMygBegUIARDQAQ..i&docid=Ysbl4K5EF2o_CM&w=806&h=605&itg=1&q=ms%20dhoni&safe=active&ved=2ahUKEwi1qLWImrHrAhWaSCsKHQCWAHkQMygBegUIARDQAQ",
+            "https://www.google.com/imgres?imgurl=https%3A%2F%2Fakm-img-a-in.tosshub.com%2Findiatoday%2Fimages%2Fstory%2F202003%2Fab.jpeg%3FaJSoJO2GhipiRlntSE.R6hWo2N2fOBZ3%26size%3D770%3A433&imgrefurl=https%3A%2F%2Fwww.indiatoday.in%2Fsports%2Fcricket%2Fstory%2Fab-de-villiers-to-take-call-on-international-comeback-after-ipl-2020-1656928-2020-03-18&tbnid=FANkwGGNdftltM&vet=12ahUKEwiaipa2mrHrAhWqnksFHa6PAsgQMygHegUIARDaAQ..i&docid=h-A7VDNm-Ux3nM&w=770&h=433&q=ab%20de%20villiers&safe=active&ved=2ahUKEwiaipa2mrHrAhWqnksFHa6PAsgQMygHegUIARDaAQ",
+            "https://www.google.com/imgres?imgurl=https%3A%2F%2Fstatic.toiimg.com%2Fthumb%2Fmsid-75449749%2Cwidth-1070%2Cheight-580%2Cimgsize-1463240%2Cresizemode-75%2Coverlay-toi_sw%2Cpt-32%2Cy_pad-40%2Fphoto.jpg&imgrefurl=https%3A%2F%2Ftimesofindia.indiatimes.com%2Fsports%2Fcricket%2Fnews%2Fno-indian-in-dale-steyns-best-xi-he-played-with-or-against%2Farticleshow%2F75449703.cms&tbnid=guUw-Vh3ZvGNmM&vet=12ahUKEwjslbTOmrHrAhX1g0sFHT9TB4IQMygHegUIARDYAQ..i&docid=HEqMzcjuDNBVuM&w=1069&h=580&q=dale%20steyn&safe=active&ved=2ahUKEwjslbTOmrHrAhX1g0sFHT9TB4IQMygHegUIARDYAQ",
+            "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.sentinelassam.com%2Fwp-content%2Fuploads%2F2019%2F07%2FBumrah-2.jpg&imgrefurl=https%3A%2F%2Fwww.sentinelassam.com%2Fsports-news%2Fon-popular-demand-jasprit-bumrah-shares-clip-of-his-match-winning-2017-knock%2F&tbnid=UD64O8vXbdhPCM&vet=12ahUKEwjLoNf1mrHrAhVUSysKHbd0BQ8QMygIegUIARDdAQ..i&docid=oQv0TxUTeOk5vM&w=759&h=422&q=jasprit%20bumrah&safe=active&ved=2ahUKEwjLoNf1mrHrAhVUSysKHbd0BQ8QMygIegUIARDdAQ"
+            ]
+
+
+        function thefunc()
+        {
+            for(var i=0;i<10;i++)
+            {
+                setTimeout(function () {
+                    var rand = Math.floor(Math.random() * 5)
+                    if (document.getElementById(String(rand + 1)).innerText == "0") {
+                        document.getElementById(String(rand + 1)).innerText = "1"
+                        n[String(rand + 1)] = 1
+                    } else {
+                        document.getElementById(String(rand + 1)).innerText = String(parseInt(document.getElementById(String(rand + 1)).innerText) + 1)
+                        n[String(rand + 1)] = parseInt(document.getElementById(String(rand + 1)).innerText) + 1
+                    }
+                    document.getElementById('desc').innerText = texts[rand]
+                    document.getElementById("image").src = images[rand]
+                }, 2000 * i); 
+                
+                
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
